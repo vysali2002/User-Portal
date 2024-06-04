@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div  *ngIf="sidebarstatus" style="height: 90vh; width: fit-content;" class="col-lg-2 bg-dark d-flex flex-column p-3">
+            <a style="text-decoration: none; color: white;" class="mb-3 fw-bolder"  routerLink="/dashboard">Home</a>
+            <a style="text-decoration: none; color: white;" class="mb-3 fw-bolder"  routerLink="/users">Users</a>
+          <button (click)="logout()" class="btn btn-link text-light  mt-auto">Logout</button>
+        </div>
+      <div class="col">
+      <div class="row mt-2">
+        <div class="col-lg-8">
+            <div style="height:140px; background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20221221/pngtree-green-background-photos-hd-pictures-and-for-free-download-image_1513273.jpg); background-size: cover;" class="banner rounded p-3 d-flex align-items-center shadow">
+                <h1 > <i (click)="menuClicked()" style="color: white; " class="fa-solid fa-bars btn  btn-outline-warning "></i> Welcome {{adminName}}</h1>
+            </div>
+            <div class="row mt-2">
+                <div class="col-lg-6">
+                    <app-calander></app-calander>
+                </div>
+                <div class="col-lg-6">
+                   <app-chart></app-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div style="height: 370px;" class="rounded p-2 border shadow">
+                <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
+            </div>
+            <div style="height:140px;  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210824/pngtree-yellow-green-background-abstract-lines-pattern-stock-photo-picture-wallpaper-and-image_769678.jpg'); background-size: cover;" class="banner justify-content-center mt-2 rounded p-3 d-flex align-items-center shadow">
+                <h1 > <i class="fa-solid fa-users"></i> All Users : {{userCount}}</h1>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+   
+</div>
